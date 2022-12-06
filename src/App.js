@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Logo from './Components/Logo.js';
+import TaskList from './Components/TaskList';
 
-function App() {
+// La tarea se crea en TaskForm(), luego en newTask()(esta funcion esta dentro de sending())
+// la describimos como el objeto(ponemos la informacion
+// en los campos que corresponden), luego la pasamos como argumento en sending()que se encarga de enviarlo
+// ese argumento lo recibe addTask que lo agrega al array y muestra al usuario. 
+
+
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Esta vez el logo lo hice como un componente reusable */}
+     <Logo/>
+     {/* Este div va a contener la lista de tareas asi como el formulario para crearlas */}
+     <div className='tareas-lista-principal'>
+        <h1>Mis Tareas</h1>
+        <TaskList/>
+     </div>
     </div>
   );
 }
-
-export default App;
